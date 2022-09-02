@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sed -n 's/^data: //p' | jq 'select(.type == "edit" and .server_name == "en.wikipedia.org")'
+

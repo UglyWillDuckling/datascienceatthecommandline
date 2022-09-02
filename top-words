@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+words_num=${1-10}
+
+tr '[:upper:]' '[:lower:]' |
+grep --color=never  -oE "[a-z\']{2,}" |
+sort |
+grep -v -Fix -f stopwords |
+uniq -c |
+sort -nr | head -n "$words_num"
+

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+jq '.articles[0:10] | .[] | {title, url, description, publishedAt}'
+
